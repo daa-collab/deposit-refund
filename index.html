@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ขอรับเงินคืนค่าประกันของเสียหาย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f1ec;
+    --card: #ffffff;
+    --ink: #1f2328;
+    --muted: #5d6470;
+    --line: #e3ddd3;
+    --accent: #8a1c2b;
+    --accent-ink: #ffffff;
+    --accent-soft: #f7e9eb;
+    --ok: #1d7a46;
+    --warn-bg: #fff6e0;
+    --warn-line: #f0d48a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16171a;
+      --card: #1f2125;
+      --ink: #eceef1;
+      --muted: #a3a9b3;
+      --line: #33363c;
+      --accent: #d9576a;
+      --accent-ink: #1a0b0e;
+      --accent-soft: #3a2228;
+      --ok: #4cc283;
+      --warn-bg: #2f2816;
+      --warn-line: #6b5a26;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Sarabun", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 16px 56px;
+  }
+  header { margin-bottom: 24px; }
+  .eyebrow {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: .02em;
+  }
+  h1 {
+    font-size: 30px;
+    line-height: 1.3;
+    margin: 4px 0 8px;
+  }
+  .lead { color: var(--muted); margin: 0; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 22px;
+    margin-bottom: 16px;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 14px;
+  }
+  .num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 700;
+    display: grid; place-items: center;
+  }
+  h2 { font-size: 19px; margin: 4px 0 6px; line-height: 1.4; }
+  .step p { margin: 0 0 8px; }
+  .email {
+    font-weight: 700;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 1px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  ul.docs { list-style: none; padding: 0; margin: 10px 0 0; }
+  ul.docs li {
+    border-top: 1px solid var(--line);
+    padding: 12px 0;
+  }
+  ul.docs li:first-child { border-top: 0; padding-top: 4px; }
+  .doc-title { font-weight: 600; }
+  .doc-note { color: var(--muted); font-size: 15px; }
+  a.dl {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 6px;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-size: 15px;
+  }
+  a.dl:hover { background: var(--accent-soft); }
+  .tip {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-line);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+  .confirm {
+    display: flex; gap: 12px; align-items: flex-start;
+    cursor: pointer;
+    margin-bottom: 16px;
+  }
+  .confirm input { width: 22px; height: 22px; margin-top: 3px; accent-color: var(--accent); flex: none; }
+  .go {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 15px 16px;
+    transition: opacity .15s;
+  }
+  .go[aria-disabled="true"] { opacity: .35; pointer-events: none; }
+  .hint { text-align: center; color: var(--muted); font-size: 14px; margin: 10px 0 0; }
+  footer { text-align: center; color: var(--muted); font-size: 14px; margin-top: 28px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">มหาวิทยาลัยศิลปากร</div>
+    <h1>ขอรับเงินคืนค่าประกันของเสียหาย</h1>
+    <p class="lead">โปรดอ่านรายละเอียดและเตรียมเอกสารให้พร้อมก่อนเข้าสู่แบบฟอร์ม</p>
+  </header>
+
+  <section class="card step">
+    <div class="num">1</div>
+    <div>
+      <h2>ล็อกอินด้วยบัญชีมหาวิทยาลัย</h2>
+      <p>ต้องล็อกอิน Google ในเครื่องด้วยบัญชี <span class="email">@silpakorn.edu</span> จึงจะกรอกแบบฟอร์มขอรับเงินคืนค่าประกันของเสียหายได้</p>
+      <div class="tip">หากเปิดแบบฟอร์มแล้วขึ้นว่าไม่มีสิทธิ์เข้าถึง ให้ออกจากบัญชีส่วนตัว (เช่น @gmail.com) หรือสลับไปใช้บัญชี @silpakorn.edu แล้วลองใหม่อีกครั้ง</div>
+    </div>
+  </section>
+
+  <section class="card step">
+    <div class="num">2</div>
+    <div>
+      <h2>เตรียมเอกสารให้พร้อม</h2>
+      <ul class="docs">
+        <li>
+          <div class="doc-title">คำร้องทั่วไป</div>
+          <div class="doc-note">เขียนความประสงค์ “ขอรับเงินคืนค่าประกันของเสียหาย”</div>
+          <a class="dl" href="https://reg6.su.ac.th/Download/petitionAttachment/MSK112.pdf" target="_blank" rel="noopener">ดาวน์โหลดแบบคำร้อง (PDF) ↗</a>
+        </li>
+        <li>
+          <div class="doc-title">สำเนาบัตรประชาชน</div>
+        </li>
+        <li>
+          <div class="doc-title">สำเนาหน้าสมุดบัญชีธนาคาร</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <label class="confirm">
+      <input type="checkbox" id="ready">
+      <span>ฉันล็อกอินด้วยบัญชี @silpakorn.edu และเตรียมเอกสารครบทั้ง 3 รายการแล้ว</span>
+    </label>
+    <a class="go" id="go" aria-disabled="true" tabindex="-1"
+       href="https://script.google.com/a/macros/silpakorn.edu/s/AKfycbycImDU4mUWWoenc_w1AwMe9sPcwEhgim_Nk6uFfK2a_F24JN6tt9B0R_ykb89GKqfTPQ/exec">
+      เข้าสู่แบบฟอร์มขอรับเงินคืน →
+    </a>
+    <p class="hint" id="hint">ติ๊กยืนยันด้านบนเพื่อเปิดปุ่ม</p>
+  </section>
+
+  <footer>มหาวิทยาลัยศิลปากร</footer>
+</main>
+<script>
+  const box = document.getElementById('ready');
+  const go = document.getElementById('go');
+  const hint = document.getElementById('hint');
+  box.addEventListener('change', () => {
+    go.setAttribute('aria-disabled', String(!box.checked));
+    go.tabIndex = box.checked ? 0 : -1;
+    hint.hidden = box.checked;
+  });
+</script>
+</body>
+</html>
